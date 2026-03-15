@@ -12,7 +12,7 @@
         rel="stylesheet">
 </head>
 
-<body>
+<body class="home-page">
 
     <header>
         <div class="container header-container">
@@ -33,6 +33,11 @@
                 <h2>その瞬間、最速で通知。</h2>
                 <p>地震発生時、ブラウザを開いていれば即座に警報を受け取れます。<br>
                     視認性の高いポップアップと音声で、あなたの安全行動をサポートします。</p>
+                <ul class="hero-keypoints">
+                    <li>通知は <strong>補助情報</strong> です。公式情報と併用してください。</li>
+                    <li>通知条件は <strong>震度・地域・通知種別</strong> で設定できます。</li>
+                    <li>異常時は FAQ の <strong>通知・動作トラブル</strong> から確認できます。</li>
+                </ul>
                 <div class="hero-actions">
                     <a href="https://chromewebstore.google.com/detail/japan-quake-alert/eicpbodfpiaimdkjbmbiomgefjflgibj"
                         class="btn-primary" target="_blank" rel="noopener">Chromeに追加（無料）</a>
@@ -41,7 +46,23 @@
             </div>
         </div>
     </section>
-    <section class="features">
+
+    <section class="flow-strip" aria-label="利用導線">
+        <div class="container flow-strip-inner">
+            <a href="#compare-features" class="flow-item">
+                <p class="flow-step is-state">比較する</p>
+                <h2>機能を比較</h2>
+                <p>主要な機能3項目を確認。</p>
+            </a>
+            <a href="#install-action" class="flow-item">
+                <p class="flow-step is-warning">導入</p>
+                <h2>インストール</h2>
+                <p>ウェブストアから追加して利用開始。</p>
+            </a>
+        </div>
+    </section>
+
+    <section class="features" id="compare-features">
         <div class="container">
             <div class="section-header">
                 <p class="section-eyebrow">Features</p>
@@ -83,6 +104,16 @@
                     <img src="data/images/popup.png" alt="普段使いのポップアップ画面と連携設定">
                 </div>
             </div>
+
+            <div class="install-panel" id="install-action" aria-label="インストール導線">
+                <h2>利用を開始する</h2>
+                <p>導入後は通知条件を設定し、実際に音声通知が鳴るかを一度確認してください。</p>
+                <div class="install-actions">
+                    <a href="https://chromewebstore.google.com/detail/japan-quake-alert/eicpbodfpiaimdkjbmbiomgefjflgibj"
+                        class="btn-primary" target="_blank" rel="noopener">Chromeに追加（無料）</a>
+                    <a href="faq.html" class="btn-secondary">導入前にFAQを見る</a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -108,9 +139,5 @@
     </footer>
 
 </body>
-<<<<<<< HEAD
 
 </html>
-=======
-</html>
->>>>>>> 53f2f0068879268368508c1eac5c8f9eefac3a06
