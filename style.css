@@ -7,6 +7,11 @@
     --c-bg:           #080c16;
     --c-surface:      #0e1424;
     --c-surface-2:    #141d30;
+    --c-brand:        #e53935;
+    --c-action:       #2f6df6;
+    --c-action-dark:  #264fbb;
+    --c-state:        #2d9d61;
+    --c-warning:      #d98e04;
     --c-accent:       #e53935;
     --c-accent-dark:  #c62828;
     --c-accent-glow:  rgba(229, 57, 53, 0.18);
@@ -125,6 +130,11 @@ header {
     background-color: rgba(255, 255, 255, 0.07);
 }
 
+.global-nav a[aria-current="page"] {
+    color: var(--c-text-1);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
 /* ===========================
    Hero
    =========================== */
@@ -216,6 +226,32 @@ header {
     line-height: 1.9;
 }
 
+.hero-keypoints {
+    margin: 0 auto 30px;
+    max-width: 760px;
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 8px;
+    text-align: center;
+}
+
+.hero-keypoints li {
+    margin: 0;
+    padding: 9px 12px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--c-border);
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--c-text-2);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.hero-keypoints strong {
+    color: var(--c-text-1);
+    font-weight: 600;
+}
+
 .hero-actions {
     display: flex;
     flex-direction: column;
@@ -247,10 +283,157 @@ header {
                 inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: 1px solid var(--c-border);
+    color: var(--c-text-1);
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.2s var(--ease);
+    background: transparent;
+}
+
+.btn-secondary:hover {
+    border-color: rgba(255, 255, 255, 0.22);
+    background: rgba(255, 255, 255, 0.04);
+}
+
 .note {
     font-size: 13px;
     color: var(--c-text-3);
     margin: 0;
+}
+
+.flow-strip {
+    padding: 28px 0 22px;
+    border-top: 1px solid var(--c-border);
+    border-bottom: 1px solid var(--c-border);
+    background: var(--c-surface);
+}
+
+.flow-strip-inner {
+    display: grid;
+    gap: 14px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.flow-item {
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.02);
+    padding: 16px;
+    text-align: center;
+    transition: border-color 0.2s var(--ease), transform 0.2s var(--ease);
+}
+
+.flow-item:hover {
+    border-color: rgba(255, 255, 255, 0.16);
+    transform: translateY(-2px);
+}
+
+.flow-item h2 {
+    margin: 8px 0 8px;
+    font-size: 17px;
+    color: var(--c-text-1);
+}
+
+.flow-item p {
+    margin: 0;
+    color: var(--c-text-2);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.flow-step {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+}
+
+.flow-step.is-action {
+    color: #dbe6ff;
+    background: rgba(47, 109, 246, 0.3);
+    border: 1px solid rgba(47, 109, 246, 0.6);
+}
+
+.flow-step.is-state {
+    color: #d8f5e5;
+    background: rgba(45, 157, 97, 0.28);
+    border: 1px solid rgba(45, 157, 97, 0.58);
+}
+
+.flow-step.is-warning {
+    color: #ffe7ba;
+    background: rgba(217, 142, 4, 0.28);
+    border: 1px solid rgba(217, 142, 4, 0.58);
+}
+
+.quick-check {
+    padding: 46px 0 20px;
+}
+
+.quick-check-title {
+    margin: 0 0 14px;
+    font-size: 24px;
+    color: var(--c-text-1);
+    letter-spacing: -0.02em;
+}
+
+.quick-check-list {
+    margin: 0;
+    padding-left: 22px;
+    color: var(--c-text-2);
+}
+
+.quick-check-list li {
+    margin-bottom: 8px;
+    line-height: 1.8;
+}
+
+.install-panel {
+    margin-top: 70px;
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-md);
+    background: var(--c-surface-2);
+    padding: 24px;
+    text-align: center;
+}
+
+.install-panel h2 {
+    margin: 0 0 10px;
+    font-size: 22px;
+    color: var(--c-text-1);
+}
+
+.install-panel p {
+    margin: 0;
+    color: var(--c-text-2);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.install-actions {
+    margin-top: 18px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 /* ===========================
@@ -467,14 +650,134 @@ footer {
 }
 
 /* FAQ */
+.faq-page .page-content {
+    max-width: 980px;
+}
+
+.faq-hero-lead {
+    margin: 16px auto 0;
+    max-width: 760px;
+    color: var(--c-text-2);
+    font-size: 15px;
+}
+
+.faq-keypoints {
+    margin: 24px auto 0;
+    max-width: 760px;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 10px;
+    text-align: left;
+}
+
+.faq-keypoints li {
+    margin: 0;
+    padding: 11px 14px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--c-border);
+    color: var(--c-text-2);
+    background: rgba(255, 255, 255, 0.02);
+    line-height: 1.7;
+}
+
+.faq-keypoints strong {
+    color: var(--c-text-1);
+    font-weight: 600;
+}
+
+.intent-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin-bottom: 52px;
+}
+
+.intent-card {
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-md);
+    background: var(--c-surface);
+    padding: 18px;
+    min-height: 170px;
+    transition: border-color 0.2s var(--ease), transform 0.2s var(--ease);
+}
+
+.intent-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.16);
+}
+
+.intent-card h2 {
+    margin: 8px 0 8px;
+    font-size: 18px;
+    line-height: 1.4;
+    color: var(--c-text-1);
+}
+
+.intent-card p {
+    margin: 0;
+    color: var(--c-text-2);
+    font-size: 14px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+.intent-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+}
+
+.intent-badge.is-action {
+    color: #dbe6ff;
+    background: rgba(47, 109, 246, 0.3);
+    border: 1px solid rgba(47, 109, 246, 0.6);
+}
+
+.intent-badge.is-state {
+    color: #d8f5e5;
+    background: rgba(45, 157, 97, 0.28);
+    border: 1px solid rgba(45, 157, 97, 0.58);
+}
+
+.intent-badge.is-warning {
+    color: #ffe7ba;
+    background: rgba(217, 142, 4, 0.28);
+    border: 1px solid rgba(217, 142, 4, 0.58);
+}
+
 .faq-list {
     display: flex;
     flex-direction: column;
+    gap: 40px;
+}
+
+.faq-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.faq-section-title {
+    font-size: 18px;
+    margin: 0 0 6px;
+    color: var(--c-text-1);
+    letter-spacing: -0.01em;
 }
 
 .faq-item {
-    border-top: 1px solid var(--c-border);
-    padding: 30px 0;
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-md);
+    background: var(--c-surface);
+    padding: 22px 24px;
 }
 
 .faq-item:last-of-type {
@@ -500,7 +803,7 @@ footer {
     justify-content: center;
     width: 26px;
     height: 26px;
-    background: var(--c-accent);
+    background: var(--c-brand);
     color: #fff;
     border-radius: 7px;
     font-size: 12px;
@@ -512,8 +815,63 @@ footer {
     font-size: 15px;
     color: var(--c-text-2);
     line-height: 1.9;
-    padding-left: 40px;
+    padding-left: 0;
     margin: 0;
+    overflow-wrap: anywhere;
+}
+
+.answer p {
+    margin: 0 0 10px;
+}
+
+.answer p:last-child {
+    margin-bottom: 0;
+}
+
+.answer ol,
+.answer ul {
+    margin: 0;
+    padding-left: 22px;
+}
+
+.support-panel {
+    margin-top: 52px;
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    background: var(--c-surface-2);
+}
+
+.support-panel h2 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    color: var(--c-text-1);
+}
+
+.support-panel p {
+    margin: 0;
+    color: var(--c-text-2);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.support-actions {
+    margin-top: 18px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.faq-page .btn-primary {
+    background: var(--c-action);
+    box-shadow: 0 4px 22px rgba(47, 109, 246, 0.45),
+                inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.faq-page .btn-primary:hover {
+    background: var(--c-action-dark);
+    box-shadow: 0 10px 34px rgba(47, 109, 246, 0.58),
+                inset 0 1px 0 rgba(255, 255, 255, 0.16);
 }
 
 .btn-center {
@@ -526,6 +884,73 @@ footer {
     max-width: 760px;
     margin: 0 auto;
     padding: 72px 24px 88px;
+}
+
+.terms-hero-lead {
+    margin: 16px auto 0;
+    max-width: 760px;
+    color: var(--c-text-2);
+    font-size: 15px;
+}
+
+.terms-important {
+    margin-bottom: 24px;
+    border: 1px solid rgba(217, 142, 4, 0.45);
+    border-radius: var(--radius-md);
+    background: rgba(217, 142, 4, 0.1);
+    padding: 18px;
+}
+
+.terms-important-title {
+    margin: 0 0 10px;
+    font-size: 17px;
+    color: #ffe7ba;
+}
+
+.terms-important ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.terms-important li {
+    color: #ffefcf;
+    margin-bottom: 6px;
+    line-height: 1.75;
+}
+
+.terms-toc {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin-bottom: 34px;
+}
+
+.terms-toc a {
+    text-decoration: none;
+    color: var(--c-text-2);
+    font-size: 14px;
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-sm);
+    padding: 8px 10px;
+    transition: all 0.2s var(--ease);
+}
+
+.terms-toc a:hover {
+    color: var(--c-text-1);
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.terms-enacted {
+    text-align: right;
+    margin-top: 48px;
+    color: var(--c-text-3);
+    font-size: 14px;
+}
+
+.terms-actions {
+    text-align: center;
+    margin-top: 56px;
 }
 
 .terms-content h1 {
@@ -593,6 +1018,19 @@ footer {
 
     .hero {
         padding: 110px 0 90px;
+    }
+
+    .intent-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .faq-item {
+        padding: 18px;
+    }
+
+    .flow-strip-inner,
+    .terms-toc {
+        grid-template-columns: 1fr;
     }
 }
 
